@@ -2,18 +2,18 @@ import React, { Component, PropTypes } from 'react';
 import './TodoList.css';
 
 class TodoList extends Component {
-  handleRemove = item => e => {
+  handleRemove = todo => e => {
     e.preventDefault();
 
-    this.props.onRemove(item);
+    this.props.onRemove(todo);
   }
 
   render() {
     return (
       <ul className="list">
-        {this.props.items.map(item => (
-          <li key={item.id}>
-            {item.text} <a href="#" onClick={this.handleRemove(item)}>remove</a>
+        {this.props.todos.map(todo => (
+          <li key={todo.id}>
+            {todo.text} <a href="#" onClick={this.handleRemove(todo)}>remove</a>
           </li>
         ))}
       </ul>
@@ -22,7 +22,7 @@ class TodoList extends Component {
 }
 
 TodoList.propTypes = {
-  items: PropTypes.array.isRequired,
+  todos: PropTypes.array.isRequired,
   onRemove: PropTypes.func.isRequired,
 }
 
