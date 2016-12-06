@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { List } from 'immutable';
 import './TodoList.css';
 
 class TodoList extends Component {
@@ -22,7 +23,7 @@ class TodoList extends Component {
 }
 
 TodoList.propTypes = {
-  todos: PropTypes.array.isRequired,
+  todos: PropTypes.instanceOf(List).isRequired,
   onRemove: PropTypes.func.isRequired,
 }
 
