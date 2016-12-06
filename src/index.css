@@ -1,5 +1,21 @@
-body {
+*,
+::after,
+::before {
+  border-collapse: collapse;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+
+body {
+  font: 400 14px/1.5 Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  text-rendering: geometricPrecision;
+}
+
+input {
+  font-size: 14px;
+}
+
+#root {
+  margin: 150px auto 0;
+  max-width: 400px;
 }

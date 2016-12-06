@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { render } from 'react-dom';
+import TodoApp from './TodoApp';
 import './index.css';
 
-ReactDOM.render(
-  <App />,
+render(
+  <TodoApp />,
   document.getElementById('root')
 );
