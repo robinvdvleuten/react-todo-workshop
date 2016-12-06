@@ -9,6 +9,13 @@ class TodoApp extends Component {
     this.state = {items: [], text: ''};
   }
 
+  handleRemove = ({ id }) => {
+    this.setState(prevState => ({
+      items: prevState.items.filter(item => item.id !== id),
+      text: ''
+    }));
+  }
+
   handleChange = e => {
     this.setState({
       text: e.target.value
@@ -23,7 +30,7 @@ class TodoApp extends Component {
       id: Date.now()
     };
 
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       items: prevState.items.concat(newItem),
       text: ''
     }));
@@ -37,7 +44,7 @@ class TodoApp extends Component {
     return (
       <div>
         <h3 className="title">TODO</h3>
-        <TodoList items={this.state.items} />
+        <TodoList items={this.state.items} onRemove={this.handleRemove} />
         <form className="form" onSubmit={this.handleSubmit}>
           <input style={{ flexBasis: '100%', padding: '5px' }} onChange={this.handleChange} value={this.state.text} />
           <button style={buttonStyles}>{'Add #' + (this.state.items.length + 1)}</button>
