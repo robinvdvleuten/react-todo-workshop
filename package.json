@@ -2,12 +2,14 @@
   "name": "react-todo-workshop",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "react-scripts": "0.8.1"
-  },
   "dependencies": {
     "react": "^15.4.1",
     "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "enzyme": "^2.6.0",
+    "react-addons-test-utils": "^15.4.1",
+    "react-scripts": "0.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
